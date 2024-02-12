@@ -3,7 +3,7 @@ FROM ghcr.io/blinklabs-io/haskell:9.6.3-3.10.2.0-1 AS cardano-node-build
 ARG NODE_VERSION=8.8.0-pre
 ENV NODE_VERSION=${NODE_VERSION}
 ARG CARDANO_NODE_GIT_REPOSITORY=https://github.com/IntersectMBO/cardano-node.git
-ENV CARDANO_NODE_GIT_REPOSITORY=${CARDANO_NODE_REPOSITORY}
+ENV CARDANO_NODE_GIT_REPOSITORY=${CARDANO_NODE_GIT_REPOSITORY}
 RUN echo "Building tags/${NODE_VERSION}..." \
     && echo tags/${NODE_VERSION} > /CARDANO_BRANCH \
     && git clone ${CARDANO_NODE_GIT_REPOSITORY} \
