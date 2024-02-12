@@ -8,8 +8,8 @@ on:
 concurrency: ${{ github.ref }}
 
 env:
-  DOCKER_IMAGE_NAME: blinklabs/cardano-node
-  GHCR_IMAGE_NAME: ghcr.io/blinklabs-io/cardano-node
+  DOCKER_IMAGE_NAME: rcmorano/cardano-node
+  GHCR_IMAGE_NAME: ghcr.io/rcmorano/cardano-node
 
 jobs:
 
