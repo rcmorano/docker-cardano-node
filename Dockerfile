@@ -1,10 +1,12 @@
 FROM ghcr.io/blinklabs-io/haskell:9.6.3-3.10.2.0-1 AS cardano-node-build
 # Install cardano-node
-ARG NODE_VERSION=8.7.3
+ARG NODE_VERSION=8.8.0-pre
 ENV NODE_VERSION=${NODE_VERSION}
+ARG CARDANO_NODE_GIT_REPOSITORY=https://github.com/IntersectMBO/cardano-node.git
+ENV CARDANO_NODE_GIT_REPOSITORY=${CARDANO_NODE_REPOSITORY}
 RUN echo "Building tags/${NODE_VERSION}..." \
     && echo tags/${NODE_VERSION} > /CARDANO_BRANCH \
-    && git clone https://github.com/input-output-hk/cardano-node.git \
+    && git clone ${CARDANO_NODE_GIT_REPOSITORY} \
     && cd cardano-node \
     && git fetch --all --recurse-submodules --tags \
     && git tag \
